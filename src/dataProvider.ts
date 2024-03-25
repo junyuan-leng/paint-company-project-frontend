@@ -31,31 +31,31 @@ export interface MyDataProvider extends DataProvider {
   ) => Promise<void>;
 }
 
-export const devDataProvider: MyDataProvider = {
-  ...devBaseDataProvider,
-  updatePaintStatus: async (source, destination) => {
-    await devDataProvider.update("paints", {
-      id: source.id,
-      data: {
-        status: destination.status,
-      },
-      previousData: {
-        status: source.status,
-      },
-    });
-  },
-  updatePaintInventory: async (source, destination) => {
-    await devDataProvider.update("paints", {
-      id: source.id,
-      data: {
-        inventory: destination.inventory,
-      },
-      previousData: {
-        inventory: source.inventory,
-      },
-    });
-  },
-};
+// export const devDataProvider: MyDataProvider = {
+//   ...devBaseDataProvider,
+//   updatePaintStatus: async (source, destination) => {
+//     await devDataProvider.update("paints", {
+//       id: source.id,
+//       data: {
+//         status: destination.status,
+//       },
+//       previousData: {
+//         status: source.status,
+//       },
+//     });
+//   },
+//   updatePaintInventory: async (source, destination) => {
+//     await devDataProvider.update("paints", {
+//       id: source.id,
+//       data: {
+//         inventory: destination.inventory,
+//       },
+//       previousData: {
+//         inventory: source.inventory,
+//       },
+//     });
+//   },
+// };
 
 const httpClient = fetchJsonWithAuthJWTToken;
 
