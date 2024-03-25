@@ -12,6 +12,7 @@ export const App = () => {
     <Admin
       dataProvider={dataProvider}
       authProvider={authProvider}
+      requireAuth
     >
       <Resource
         name="paints"
